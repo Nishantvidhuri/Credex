@@ -155,7 +155,7 @@ function ChatWidget({ darkMode }) {
   };
 
   return (
-    <div className="chat-widget fixed bottom-0 right-0 z-40 max-w-full">
+    <div className="fixed bottom-0 right-0 z-50 w-auto max-w-full">
       <AnimatePresence>
         {isOpen && (
           <motion.div
@@ -163,7 +163,7 @@ function ChatWidget({ darkMode }) {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.95 }}
             transition={{ duration: 0.3 }}
-            className="fixed bottom-20 right-3 sm:right-5 md:right-10 bg-white dark:bg-gray-800 rounded-xl shadow-2xl w-[calc(100%-24px)] sm:w-full sm:max-w-sm overflow-hidden border border-gray-200 dark:border-gray-700 z-50"
+            className="fixed bottom-20 left-4 right-4 mx-auto sm:left-auto sm:right-5 md:right-10 bg-white dark:bg-gray-800 rounded-xl shadow-2xl w-[calc(100%-32px)] sm:w-auto sm:max-w-sm overflow-hidden border border-gray-200 dark:border-gray-700"
           >
             {/* Chat header */}
             <div className="bg-blue-600 text-white p-4 flex justify-between items-center">
@@ -178,7 +178,7 @@ function ChatWidget({ darkMode }) {
                 </div>
                 <div>
                   <p className="font-semibold">SoftSell Assistant</p>
-                  <p className="text-xs text-blue-100">Powered by OpenAI</p>
+                  <p className="text-xs text-blue-100">Powered by Google AI</p>
                 </div>
               </div>
               <button 
@@ -263,15 +263,15 @@ function ChatWidget({ darkMode }) {
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
         onClick={() => setIsOpen(!isOpen)}
-        className="fixed bottom-5 right-5 md:right-10 bg-blue-600 text-white p-3 sm:p-4 rounded-full shadow-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-colors z-50"
+        className="fixed bottom-4 right-4 md:right-8 bg-blue-600 text-white p-3 rounded-full shadow-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-colors"
         aria-label={isOpen ? "Close chat" : "Open chat"}
       >
         {isOpen ? (
-          <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 sm:h-6 sm:w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
           </svg>
         ) : (
-          <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 sm:h-6 sm:w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
           </svg>
         )}

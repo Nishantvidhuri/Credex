@@ -77,13 +77,6 @@ button:focus-visible {
   color-scheme: dark;
 }
 
-/* ChatWidget styling */
-.chat-widget {
-  z-index: 1000;
-  width: auto;
-  max-width: 100%;
-}
-
 /* Form field focus styles */
 .form-input:focus, 
 .form-textarea:focus, 
