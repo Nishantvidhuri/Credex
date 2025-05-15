@@ -79,10 +79,9 @@ button:focus-visible {
 
 /* ChatWidget styling */
 .chat-widget {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
   z-index: 1000;
+  width: auto;
+  max-width: 100%;
 }
 
 /* Form field focus styles */
