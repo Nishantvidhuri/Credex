@@ -57,6 +57,8 @@ SoftSell is a modern, responsive marketing website for a fictional software lice
 
 ## 📱 Deployment
 
+This project is deployed and live at: [https://credex-iota.vercel.app/](https://credex-iota.vercel.app/)
+
 Ready to be deployed on Vercel with the following command:
 ```
 vercel
