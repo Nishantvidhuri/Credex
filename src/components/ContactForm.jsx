@@ -280,16 +280,16 @@ function ContactForm() {
                       placeholder="Tell us more about your licenses..."
                     ></textarea>
                   </div>
-                  
+                  <div className='flex justify-center border border-purple-500 rounded-lg'>
                   <motion.button
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
                     type="submit"
-                    className="w-full px-6 py-3 bg-primary-600 dark:bg-primary-500 text-white font-medium rounded-lg shadow-md hover:bg-primary-700 dark:hover:bg-primary-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-300 transition-colors duration-200"
+                    className="w-full px-6 py-3 bg-primary-600 dark:bg-primary-500 text-purple-500 font-medium rounded-lg shadow-md hover:bg-primary-700 dark:hover:bg-primary-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-300  transition-colors duration-200"
                   >
                     Get a Quote
                   </motion.button>
-                  
+                  </div>
                   <p className="text-xs text-light-500 dark:text-dark-100 text-center">
                     By submitting this form, you agree to our <a href="#" className="text-primary-600 dark:text-primary-300 hover:underline">Terms</a> and <a href="#" className="text-primary-600 dark:text-primary-300 hover:underline">Privacy Policy</a>.
                   </p>
