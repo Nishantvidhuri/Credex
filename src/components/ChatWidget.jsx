@@ -30,11 +30,11 @@ function ChatWidget({ darkMode }) {
   const sendMessageToGemini = async (messageText) => {
     setIsLoading(true);
     try {
-      // For development: use this mock response to avoid rate limits
-      // return new Promise(resolve => 
-      //   setTimeout(() => resolve("Here's a mock response to keep testing smoothly."), 1000)
-      // );
-
+      // For development: use this mock response if API key is missing or for testing
+      if (!geminiAPIKey) {
+        return "I'm in development mode right now. In production, I'd use the Gemini API to provide smart responses. Please add a valid API key to your environment variables.";
+      }
+      
       // Convert previous messages to context
       const previousMessages = messages
         .map(msg => msg.text)
@@ -42,7 +42,7 @@ function ChatWidget({ darkMode }) {
       
       const systemPrompt = "You are a helpful customer service assistant for SoftSell, a software license resale platform. Provide concise, friendly answers about how the platform works, the software licenses we accept, our security measures, and payment processes. Keep responses under 100 words and focus on being helpful.";
       
-      const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${geminiAPIKey}`, {
+      const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-pro:generateContent?key=${geminiAPIKey}`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -57,6 +57,9 @@ function ChatWidget({ darkMode }) {
       });
 
       if (!response.ok) {
+        if (response.status === 403) {
+          return "API access error (403 Forbidden). Please check your API key and permissions.";
+        }
         if (response.status === 429) {
           return "Too many requests. Please wait a moment and try again.";
         }
@@ -76,10 +79,10 @@ function ChatWidget({ darkMode }) {
   const sendMessageToOpenAI = async (messageText) => {
     setIsLoading(true);
     try {
-      // For development: use this mock response to avoid rate limits
-      // return new Promise(resolve => 
-      //   setTimeout(() => resolve("Here's a mock response to keep testing smoothly."), 1000)
-      // );
+      // For development: use this mock response if API key is missing or for testing
+      if (!openAIKey) {
+        return "I'm in development mode right now. In production, I'd use the OpenAI API to provide smart responses. Please add a valid API key to your environment variables.";
+      }
       
       const response = await fetch('https://api.openai.com/v1/chat/completions', {
         method: 'POST',
