@@ -97,16 +97,16 @@ function Footer() {
           <div>
             <h3 className="text-lg font-semibold mb-4 text-light-900 dark:text-dark-100">Subscribe</h3>
             <p className="text-light-600 dark:text-dark-300 mb-4">Stay up to date with our latest news and products.</p>
-            <form className="flex">
+            <form className="flex flex-col sm:flex-row">
               <input 
                 type="email" 
                 placeholder="Your email" 
-                className="px-4 py-2 rounded-l-lg w-full bg-light-100 dark:bg-dark-700 border-light-300 dark:border-dark-600 text-light-900 dark:text-dark-100 focus:outline-none focus:ring-2 focus:ring-primary-500"
+                className="px-4 py-2 rounded-lg sm:rounded-r-none sm:rounded-l-lg w-full bg-light-100 dark:bg-dark-700 border-light-300 dark:border-dark-600 text-light-900 dark:text-dark-100 focus:outline-none focus:ring-2 focus:ring-primary-500 mb-2 sm:mb-0"
               />
               <motion.button 
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="bg-primary-600 dark:bg-primary-500 text-white px-4 py-2 rounded-r-lg font-medium hover:bg-primary-700 dark:hover:bg-primary-600 transition-colors"
+                className="bg-primary-600 dark:bg-primary-500 text-white px-4 py-2 rounded-lg sm:rounded-l-none sm:rounded-r-lg font-medium hover:bg-primary-700 dark:hover:bg-primary-600 transition-colors"
               >
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
