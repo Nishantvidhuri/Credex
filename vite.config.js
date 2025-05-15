@@ -4,8 +4,4 @@ import tailwindcss from '@tailwindcss/vite';
 
 export default defineConfig({
   plugins: [react(), tailwindcss()],
-  // Properly expose environment variables
-  define: {
-    'process.env': process.env
-  }
 });
